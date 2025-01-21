@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +16,10 @@
         }
 
         .flip-card {
-            width: 90vw; /* Take 90% of the viewport width */
-            height: calc(90vw * 7 / 4); /* Maintain 7:4 aspect ratio */
-            max-height: 90vh; /* Ensure it doesn’t exceed 90% of the viewport height */
-            max-width: calc(90vh * 4 / 7); /* Keep aspect ratio for horizontal view */
+            width: 90vw; /* Use 90% of the viewport width */
+            height: calc(90vw * 4 / 7); /* Maintain 7:4 aspect ratio */
+            max-height: 90vh; /* Ensure the card doesn't exceed 90% of the viewport height */
+            max-width: calc(90vh * 7 / 4); /* Adjust for smaller screens in portrait mode */
             perspective: 1000px; /* Enable 3D perspective */
         }
 
@@ -45,13 +46,13 @@
         .flip-card-back img {
             width: 100%;    /* Fill the width of the card */
             height: 100%;   /* Fill the height of the card */
-            object-fit: cover; /* Ensure the image covers the card without distortion */
+            object-fit: contain; /* Ensure the whole image is shown without cropping */
         }
 
-        @media (max-aspect-ratio: 4 / 7) { /* For taller screens (portrait orientation) */
+        @media (max-aspect-ratio: 4 / 7) { /* For very tall screens */
             .flip-card {
                 height: 90vh; /* Fill 90% of screen height */
-                width: calc(90vh * 4 / 7); /* Maintain 7:4 aspect ratio */
+                width: calc(90vh * 7 / 4); /* Adjust to maintain 7:4 aspect ratio */
             }
         }
     </style>
