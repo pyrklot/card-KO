@@ -78,6 +78,9 @@
             card.addEventListener("click", () => {
                 card.classList.toggle("clicked");
             });
+          document.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+            });
         });
     </script>
 </head>
